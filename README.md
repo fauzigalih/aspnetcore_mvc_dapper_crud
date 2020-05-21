@@ -1,7 +1,7 @@
 # aspnetcore_mvc_dapper_crud
  This example project build with asp net core mvc and orm dapper
  
- Status: <b>Release Version 1.0</b>
+ Status: <b>On Progress</b>
  
  # Technology
  1. ASP .NET Core 3.1
