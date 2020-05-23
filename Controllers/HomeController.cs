@@ -23,6 +23,7 @@ namespace aspnetcore_mvc_dapper_crud.Controllers
             return View();
         }
 
+        [Route("home/privacy")]
         public IActionResult Privacy()
         {
             return View();
