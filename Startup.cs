@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using aspnetcore_mvc_dapper_crud.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
 
 namespace aspnetcore_mvc_dapper_crud
 {
@@ -24,6 +27,12 @@ namespace aspnetcore_mvc_dapper_crud
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            var conn = new MySqlConnection(connectionString);
+
+            services.AddScoped<Models.DbConn>(d => new DbConn(conn));
+            services.AddScoped<Models.BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
