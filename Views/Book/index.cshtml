@@ -1,0 +1,43 @@
+﻿@model IEnumerable<aspnetcore_mvc_dapper_crud.Models.Book>
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1>Books</h1>
+<br />
+<a asp-action="Create" class="btn btn-primary">Create New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublishedDate)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => item.ID)</td>
+                <td>@Html.DisplayFor(model => item.Title)</td>
+                <td>@Html.DisplayFor(model => item.Author)</td>
+                <td>@Html.DisplayFor(model => item.PublishedDate)</td>
+                <td>
+                    @Html.ActionLink("Details", "details", new { id = item.ID }) |
+                    @Html.ActionLink("Update", "update", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
