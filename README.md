@@ -1,5 +1,5 @@
 # aspnetcore_mvc_dapper_crud
- This example project build with asp net core mvc and orm dapper
+ This example project build with ASP NET Core MVC and ORM Dapper
  
  Status: <b>Release Version 1.0</b>
  
@@ -29,7 +29,10 @@ CREATE TABLE `book` (
 INSERT INTO book(Title,Author,PublishedDate)
 VALUES ('Dream of Krabs','Fauzi','2020-05-24');
 ~~~
-4. Setting connection database in <code>appsettings.json</code>
+4. Setting connection database in <code>appsettings.json</code> . This connection for MySQL
+~~~
+"DefaultConnection": "server=localhost; database=dapper; uid=root; password=;"
+~~~
 5. Finish..
 
 <br><br><br>Created by: <a href="https://www.instagram.com/fauzigalihajisaputro/">@fauzigalihajisaputro</a>
