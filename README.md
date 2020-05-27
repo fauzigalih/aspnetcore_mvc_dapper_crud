@@ -11,7 +11,7 @@
  # Required Project
  1. MySQL
  2. Visual Studio IDE or another
- 3. Net Core SDK 3.1 or above
+ 3. Net Core SDK 3.1
  
  # Instalation
 1. Clone this project with new repository or download project file
