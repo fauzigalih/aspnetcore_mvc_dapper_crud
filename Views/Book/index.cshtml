@@ -33,9 +33,9 @@
                 <td>@Html.DisplayFor(model => item.Author)</td>
                 <td>@Html.DisplayFor(model => item.PublishedDate)</td>
                 <td>
-                    @Html.ActionLink("Details", "details", new { id = item.ID }) |
-                    @Html.ActionLink("Update", "update", new { id = item.ID }) |
-                    @Html.ActionLink("Delete", "delete", new { id = item.ID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Update", "Update", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                 </td>
             </tr>
         }

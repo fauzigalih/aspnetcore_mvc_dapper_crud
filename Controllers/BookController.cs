@@ -16,47 +16,48 @@ namespace aspnetcore_mvc_dapper_crud.Controllers
         }
 
         [Route("book")]
-        public IActionResult index()
+        public IActionResult Index()
         {
             var b = Repo.GetBooks();
             return View(b);
         }
 
         [Route("book/create")]
-        public IActionResult create()
-        {
-            return View();
-        }
+        public IActionResult Create() => View();
 
         [HttpPost]
-        public IActionResult create(Book book)
+        [Route("book/create")]
+        public IActionResult Create(Book book)
         {
             var b = Repo.Add(book);
-            return RedirectToAction("index");
+            return RedirectToAction("Index");
         }
 
-        [Route("book/edit/{id}")]
-        public IActionResult update(int id)
+        [Route("book/update/{id}")]
+        public IActionResult Update(int id)
         {
             Book b = Repo.GetBook(id);
             return View(b);
         }
 
         [HttpPost]
-        public IActionResult update(int id, Book book)
+        [Route("book/update/{id}")]
+        public IActionResult Update(int id, Book book)
         {
             int b = Repo.Update(book);
-            return RedirectToAction("index");
+            return RedirectToAction("Index");
         }
 
-        public IActionResult delete(int id)
+        [Route("book/delete/{id}")]
+        public IActionResult Delete(int id)
         {
             Book b = Repo.GetBook(id);
             return View(b);
         }
 
         [HttpPost]
-        public IActionResult confirmdelete(int id)
+        [Route("book/delete/{id}")]
+        public IActionResult Confirmdelete(int id)
         {
             Repo.Delete(id);
             
@@ -64,7 +65,7 @@ namespace aspnetcore_mvc_dapper_crud.Controllers
         }
 
         [Route("book/details/{id}")]
-        public IActionResult details(int id)
+        public IActionResult Details(int id)
         {
             Book b = Repo.GetBook(id);
             return View(b);
